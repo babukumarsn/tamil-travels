@@ -41,7 +41,7 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: npm run build -- --base-href="/"
+        run: npm run build -- --base-href="/tamil-travels"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
