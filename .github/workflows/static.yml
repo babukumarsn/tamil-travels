@@ -49,6 +49,6 @@ jobs:
           path: '.'
           
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/tamil-travels-app
+        run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
