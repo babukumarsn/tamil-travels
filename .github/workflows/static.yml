@@ -29,24 +29,28 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - name: Install Dependencies
-        run: npm install
+    - name: 🧑‍💻 Configure Git user
+      run: |
+        git config --global user.email "babukamarsn@gmail.com"
+        git config --global user.name "Babu"
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    - name: Install Dependencies
+      run: npm install
 
-      - name: Build Angular App
-        run: npm run build -- --base-href="/tamizh-travels"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --no-silent
-        
+    - name: Build Angular App
+      run: npm run build -- --base-href="/tamizh-travels"
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: '.'
+    - name: Deploy to GitHub Pages
+      run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --no-silent
+      
