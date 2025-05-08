@@ -44,6 +44,9 @@ jobs:
         run: npm run build -- --base-href="/tamizh-travels"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
       - name: Deploy to GitHub Pages
         run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --no-silent
         
