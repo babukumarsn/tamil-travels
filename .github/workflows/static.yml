@@ -52,5 +52,7 @@ jobs:
         # Upload entire repository
         path: '.'
     - name: Deploy to GitHub Pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --no-silent
       
