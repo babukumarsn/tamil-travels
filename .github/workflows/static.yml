@@ -54,5 +54,6 @@ jobs:
     - name: Deploy to GitHub Pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --no-silent
+      run: npx angular-cli-ghpages --dir=dist/tamizh-travels-app --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} --name="Babu" --email="babukumarsn@gmail.com"
+
       
